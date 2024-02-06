@@ -1,0 +1,34 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:s="https://github.com/canton7/Stylet"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:modern="http://schemas.modernwpf.com/2019"
+             xmlns:wpfApp1="clr-namespace:WpfApp1">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <s:ApplicationLoader>
+                    <s:ApplicationLoader.Bootstrapper>
+                        <wpfApp1:Bootstrapper />
+                    </s:ApplicationLoader.Bootstrapper>
+                </s:ApplicationLoader>
+
+                <modern:ThemeResources />
+                <modern:XamlControlsResources />
+                <modern:IntellisenseResources Source="/ModernWpf;component/DesignTime/DesignTimeResources.xaml" />
+
+                <ui:ThemesDictionary Theme="Dark" />
+                <ui:ControlsDictionary />
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+            <Style TargetType="modern:SimpleStackPanel">
+                <Setter Property="Spacing" Value="8" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
